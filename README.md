@@ -8,24 +8,34 @@ The objective of this project is to analyze gene expression data to identify pat
 
 ### Data Loading
 
-- Successfully loaded various datasets from the Gene Expression Omnibus (GEO) using custom scripts.
+- Successfully loaded various datasets from the Gene Expression Omnibus (GEO).
+- Manually downloaded Annotation, Full and Series family metadata files
+- [Example dataset](https://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS5519)
+- *load_data.py*
 
 ### Data Preprocessing
 
 - Cleaned and normalized the data to ensure it was ready for analysis.
+- *preprocess_data.py*
 
 ### Exploratory Data Analysis (EDA)
 
 - Performed descriptive statistics and visualizations to understand the data distribution.
 - Generated histograms and box plots for numerical columns.
+- *eda.py*
 
 ### Correlation Analysis and Statistical Testing
 
 - Conducted correlation analysis to identify relationships between gene expressions.
 - Performed statistical tests (t-tests and ANOVA) to identify significant differences in gene expression related to bone growth and remodeling.
 - Handled large datasets and ensured sufficient data for statistical tests.
+- *analysis.py*
 
 ## Next Steps
+
+### Correlation Analysis and Statistical Testing
+1. **Optimization**
+   - Runs quite slow for 1.7 GB of Data, how to speed up?
 
 ### Pathway and Functional Analysis
 
@@ -56,10 +66,34 @@ The objective of this project is to analyze gene expression data to identify pat
 
 The datasets used in this project can be downloaded from the following link:
 
-[Download Datasets](https://link_to_your_datasets.com)
+[Download Datasets](https://drive.google.com/drive/folders/10AoprlN6X7iQtmcS0HyrQuN6Hmb-Zwzr?usp=sharing)
 
 ## How to Run
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/saketh-n/bone-io.git
+   cd bone io
+2. Download the datasets
+   - Visit the [link](https://drive.google.com/drive/folders/10AoprlN6X7iQtmcS0HyrQuN6Hmb-Zwzr?usp=sharing) and download the datasets
+   - Place the Datasets folder within the same directory as the scripts file
+3. Install the required dependencies:
+   ```bash
+   pip3 install -r requirements.txt
+4. Run the scripts for steps 1-4
+   - STEP 1
+   ```bash
+   python3 load_data.py
+   ```
+   - STEP 2
+   ```bash
+   python3 preprocess_data.py
+   ```
+   - STEP 3
+   ```bash
+   python3 eda.py
+   ```
+   - STEP 4
+   ```bash
+   python3 analysis.py
+   ```
